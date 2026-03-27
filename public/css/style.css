@@ -1,0 +1,226 @@
+/* ===== LMS Theme Variables ===== */
+:root {
+  --bs-primary: #4361ee;
+  --bs-primary-rgb: 67, 97, 238;
+  --lms-primary: #4361ee;
+  --lms-primary-soft: rgba(67, 97, 238, 0.1);
+  --lms-body-bg: #f0f2f5;
+  --lms-sidebar-bg: #ffffff;
+  --lms-border: #e9ecef;
+}
+
+body {
+  background-color: var(--lms-body-bg);
+  font-size: 0.9rem;
+  color: #212529;
+}
+
+/* ===== Navbar ===== */
+.lms-navbar {
+  background: #ffffff;
+  border-bottom: 1px solid var(--lms-border);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .05);
+  --bs-navbar-brand-color: var(--lms-primary);
+  --bs-navbar-brand-hover-color: #3451d4;
+}
+
+.lms-toggler {
+  line-height: 1;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lms-toggler:focus {
+  box-shadow: none;
+}
+
+/* ===== Sidebar ===== */
+.lms-sidebar {
+  background: var(--lms-sidebar-bg);
+  border-right: 1px solid var(--lms-border);
+  min-height: calc(100vh - 57px);
+  padding-top: 0.5rem;
+}
+
+.lms-sidebar .sidebar-section {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #adb5bd;
+  padding: 0.75rem 1.1rem 0.25rem;
+}
+
+.lms-sidebar .nav-link {
+  color: #495057;
+  padding: 0.55rem 1rem;
+  border-radius: 0.4rem;
+  margin: 1px 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.lms-sidebar .nav-link i {
+  font-size: 1rem;
+  width: 18px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.lms-sidebar .nav-link:hover {
+  color: var(--lms-primary);
+  background: var(--lms-primary-soft);
+}
+
+.lms-sidebar .nav-link.active {
+  color: var(--lms-primary);
+  background: var(--lms-primary-soft);
+  font-weight: 600;
+}
+
+/* ===== Page Header ===== */
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.875rem;
+  border-bottom: 1px solid var(--lms-border);
+}
+
+.page-header h4,
+.page-header h5 {
+  font-weight: 700;
+  margin-bottom: 0;
+  color: #1a1d23;
+}
+
+/* ===== Stat Cards ===== */
+.stat-card { border-top: 3px solid transparent; }
+.stat-primary { border-top-color: var(--lms-primary); }
+.stat-success  { border-top-color: #198754; }
+.stat-warning  { border-top-color: #ffc107; }
+.stat-danger   { border-top-color: #dc3545; }
+.stat-info     { border-top-color: #0dcaf0; }
+
+/* ===== Tables ===== */
+.table-minimal thead th {
+  background-color: #f8f9fa;
+  color: #6c757d;
+  font-size: 0.73rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  border-bottom: 1px solid #dee2e6;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+/* ===== Cards ===== */
+.card {
+  border-radius: 0.6rem;
+}
+
+/* ===== Badges ===== */
+.badge {
+  font-weight: 500;
+}
+
+/* ===== Login ===== */
+.login-wrapper {
+  display: block;
+  margin: auto;
+  width: 440px;
+  margin-top: 100px;
+  position: relative;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 767.98px) {
+  .lms-sidebar {
+    min-height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--lms-border);
+  }
+
+  .login-wrapper {
+    width: 100%;
+    margin-top: 40px;
+    padding: 0 1rem;
+  }
+
+  /* Mobile modal improvements */
+  .modal-fullscreen-sm-down {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .modal-fullscreen-sm-down .modal-content {
+    height: 100%;
+    border-radius: 0;
+    border: none;
+  }
+
+  /* Better mobile table scrolling */
+  .table-responsive {
+    font-size: 0.85rem;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 0.5rem;
+  }
+
+  .table-responsive table {
+    min-width: 600px;
+  }
+
+  /* Mobile alert improvements */
+  .alert {
+    font-size: 0.875rem;
+    padding: 0.75rem 1rem;
+  }
+
+  /* Stat cards on mobile */
+  .stat-card .card-body {
+    padding: 0.75rem;
+  }
+
+  .stat-card .fs-4 {
+    font-size: 1.25rem !important;
+  }
+
+  .stat-card .fs-5 {
+    font-size: 1rem !important;
+  }
+
+  /* Quick action buttons on mobile */
+  .card-body .btn {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  /* Page header improvements */
+  .page-header {
+    padding-bottom: 0.5rem;
+  }
+
+  .page-header h4,
+  .page-header h5 {
+    font-size: 1.1rem;
+  }
+
+  /* Main content padding on mobile */
+  main {
+    padding: 1rem !important;
+  }
+}
