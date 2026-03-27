@@ -102,6 +102,10 @@ class UsersController extends AppController
                     'phone' => $phone, 'address' => $address,
                     'role' => $user->role,
                 ])) {
+                    // Update session name if editing the currently logged-in user
+                    if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $id) {
+                        $_SESSION['user_name'] = $name;
+                    }
                     $_SESSION['flash_success'] = 'User updated successfully.';
                     header('Location: ' . BASE_URL . 'Users/index');
                     exit();

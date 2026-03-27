@@ -57,7 +57,7 @@ class AuthController extends AppController
                     session_regenerate_id(true);
 
                     $_SESSION['user_id']   = $user->id;
-                    $_SESSION['user_name'] = $user->fullname ?? $user->full_name ?? 'User';
+                    $_SESSION['user_name'] = $user->fullname ?? $user->fullname ?? 'User';
                     $_SESSION['user_role'] = $user->role;   // Use role from database (Admin, Librarian, Member)
                     $_SESSION['logged_in'] = true;
 

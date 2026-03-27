@@ -42,19 +42,13 @@ class Users
     {
         // Find user by email only (any role: Admin, Librarian, Member)
         $stmt = $this->db->prepare("
-            SELECT user_id as id, fullname, email, password, role FROM users WHERE email = ? LIMIT 1
+            SELECT user_id as id, fullname, email, password, role FROM users WHERE email = :email LIMIT 1
         ");
-        $stmt->execute([$identifier]);
+        $stmt->execute([':email' => $identifier]);
         return $stmt->fetch(PDO::FETCH_OBJ);
     }
 
-    public function findByStudentId(string $studentId): object|false
-    {
-        // Members use email for kiosk login
-        $stmt = $this->db->prepare("SELECT user_id as id, fullname, email, role FROM users WHERE email = ? AND role = 'Member' LIMIT 1");
-        $stmt->execute([$studentId]);
-        return $stmt->fetch(PDO::FETCH_OBJ);
-    }
+
 
     public function findMember(string $query): object|false
     {
